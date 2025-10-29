@@ -18,12 +18,12 @@ $drivers = $driversResult->fetch_all(MYSQLI_ASSOC);
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Admin Dashboard</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <title>Admin Dashboard | TrycKaSaken</title>
+  <link rel="stylesheet" href="assets/css/admin.css">
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar">
   <div class="container">
     <a class="navbar-brand" href="#">Admin Panel</a>
     <div class="d-flex">
@@ -32,10 +32,53 @@ $drivers = $driversResult->fetch_all(MYSQLI_ASSOC);
   </div>
 </nav>
 
+<div class="admin-container">
+  <div class="stats-grid">
+    <div class="stat-card">
+      <div class="stat-header">
+        <div>
+          <div class="stat-number"><?= count($passengers) ?></div>
+          <div class="stat-label">Total Passengers</div>
+        </div>
+        <div class="stat-icon">👥</div>
+      </div>
+    </div>
+    
+    <div class="stat-card">
+      <div class="stat-header">
+        <div>
+          <div class="stat-number"><?= count($drivers) ?></div>
+          <div class="stat-label">Total Drivers</div>
+        </div>
+        <div class="stat-icon">🚗</div>
+      </div>
+    </div>
+    
+    <div class="stat-card">
+      <div class="stat-header">
+        <div>
+          <div class="stat-number"><?= count($passengers) + count($drivers) ?></div>
+          <div class="stat-label">Total Users</div>
+        </div>
+        <div class="stat-icon">📊</div>
+      </div>
+    </div>
+    
+    <div class="stat-card">
+      <div class="stat-header">
+        <div>
+          <div class="stat-number">Active</div>
+          <div class="stat-label">System Status</div>
+        </div>
+        <div class="stat-icon">✅</div>
+      </div>
+    </div>
+  </div>
+
 
   <div class="card shadow-sm mb-4">
     <div class="card-header bg-primary text-white">
-      <h5 class="mb-0">Passengers (<?= count($passengers) ?>)</h5>
+      <h5 class="mb-0">👥 Passengers (<?= count($passengers) ?>)</h5>
     </div>
     <div class="card-body">
       <?php if (count($passengers) > 0): ?>
@@ -83,7 +126,7 @@ $drivers = $driversResult->fetch_all(MYSQLI_ASSOC);
 
   <div class="card shadow-sm mb-4">
     <div class="card-header bg-success text-white">
-      <h5 class="mb-0">Drivers (<?= count($drivers) ?>)</h5>
+      <h5 class="mb-0">🚗 Drivers (<?= count($drivers) ?>)</h5>
     </div>
     <div class="card-body">
       <?php if (count($drivers) > 0): ?>
@@ -133,7 +176,7 @@ $drivers = $driversResult->fetch_all(MYSQLI_ASSOC);
     <div class="col-md-4">
       <div class="card shadow-sm mb-3">
         <div class="card-body">
-          <h5 class="card-title">Manage Users</h5>
+          <h5 class="card-title">📋 Manage Users</h5>
           <p class="card-text">View, edit, or remove registered users.</p>
           <a href="#" class="btn btn-primary">Go</a>
         </div>
@@ -142,8 +185,17 @@ $drivers = $driversResult->fetch_all(MYSQLI_ASSOC);
     <div class="col-md-4">
       <div class="card shadow-sm mb-3">
         <div class="card-body">
-          <h5 class="card-title">Site Settings</h5>
+          <h5 class="card-title">⚙️ Site Settings</h5>
           <p class="card-text">Configure website settings and preferences.</p>
+          <a href="#" class="btn btn-primary">Go</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card shadow-sm mb-3">
+        <div class="card-body">
+          <h5 class="card-title">📊 Analytics</h5>
+          <p class="card-text">View system analytics and reports.</p>
           <a href="#" class="btn btn-primary">Go</a>
         </div>
       </div>
