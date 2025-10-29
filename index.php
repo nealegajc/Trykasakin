@@ -1,3 +1,7 @@
+<?php
+// Get count of available drivers
+require_once 'includes/get_available_drivers.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,6 +24,15 @@
         <h1>Welcome to <span>TrycKaSaken</span></h1>
         <p>Your trusted platform for fast, safe, and convenient tricycle rides. Book a ride or become a driver today!</p>
         
+        <!-- Available Drivers Badge -->
+        <div class="drivers-badge">
+            <div class="badge-icon">👨‍✈️</div>
+            <div class="badge-content">
+                <div class="badge-number"><?php echo $available_drivers; ?></div>
+                <div class="badge-text">Available Drivers Ready to Serve</div>
+            </div>
+        </div>
+        
         <div class="cta-buttons">
             <a href="login.php" class="btn btn-primary">
                 <i class="bi bi-rocket-takeoff"></i> Get Started
@@ -40,7 +53,7 @@
             <div class="feature-card">
                 <div class="feature-icon">⚡</div>
                 <h3>Fast & Reliable</h3>
-                <p>Get matched with nearby drivers instantly and reach your destination quickly.</p>
+                <p>Get matched with drivers instantly and reach your destination quickly.</p>
             </div>
             
             <div class="feature-card">
@@ -66,12 +79,6 @@
                 <h3>For Everyone</h3>
                 <p>Whether you're a passenger or driver, we've got you covered.</p>
             </div>
-            
-            <div class="feature-card">
-                <div class="feature-icon">⭐</div>
-                <h3>Quality Service</h3>
-                <p>Rated drivers and continuous service improvement for the best experience.</p>
-            </div>
         </div>
     </div>
 </section>
@@ -81,7 +88,7 @@
     <div class="features-container" style="text-align: center;">
         <h2 class="section-title">Ready to Get Started?</h2>
         <p style="font-size: 18px; color: #6B6B6B; margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto;">
-            Join thousands of satisfied users who trust TrycKaSaken for their daily commute. 
+            Join TrycKaSaken for their daily commute. 
             Sign up now and experience the difference!
         </p>
         
@@ -95,19 +102,6 @@
         </div>
     </div>
 </section>
-
-<!-- Footer -->
-<footer class="footer">
-    <p>&copy; 2025 TrycKaSaken - Tricycle Booking Platform</p>
-    <p>
-        <a href="login.php"><i class="bi bi-box-arrow-in-right"></i> Login</a> | 
-        <a href="register.php"><i class="bi bi-person-plus"></i> Register</a> | 
-        <a href="admin.php"><i class="bi bi-shield-lock"></i> Admin</a>
-    </p>
-    <p style="margin-top: 20px; opacity: 0.8; font-size: 14px;">
-        Safe rides, happy passengers, satisfied drivers. 🛺
-    </p>
-</footer>
 
 <!-- Bootstrap 5 JS Bundle -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>

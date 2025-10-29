@@ -188,10 +188,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <i class="bi bi-person-check"></i> Create Account
                 </button>
             </form>
-
-            <div class="footer-text">
-                Already have an account? <a href="login.php"><i class="bi bi-box-arrow-in-right"></i> Login here</a>
-            </div>
         </div>
     </div>
 

@@ -112,10 +112,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <i class="bi bi-box-arrow-in-right"></i> Login
                 </button>
             </form>
-
-            <div class="footer-text">
-                Don't have an account? <a href="register.php"><i class="bi bi-person-plus"></i> Register here</a>
-            </div>
         </div>
     </div>
 
