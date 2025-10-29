@@ -1,12 +1,12 @@
-# 🚕 TrycKaSaken - Tricycle Booking Platform
+# TrycKaSaken - Tricycle Booking Platform
 
-A web-based platform for tricycle booking and ride-sharing services, connecting passengers with tricycle drivers in real-time.
+A modern web-based platform for tricycle booking and ride-sharing services, connecting passengers with tricycle drivers in real-time.
 
-## 📋 Overview
+## Overview
 
 **TrycKaSaken** is a comprehensive booking system designed to facilitate tricycle transportation services. The platform allows passengers to book rides and drivers to accept and manage bookings efficiently.
 
-## ✨ Features
+## Features
 
 - **User Authentication**: Secure login and registration for passengers and drivers
 - **Driver Verification**: Admin verification system for driver documents
@@ -14,16 +14,18 @@ A web-based platform for tricycle booking and ride-sharing services, connecting 
 - **Admin Dashboard**: Comprehensive user management interface
 - **Document Management**: Secure upload and storage of driver credentials
 - **Booking Status Tracking**: Track rides from pending to completed
-- **Responsive Design**: Mobile-friendly Bootstrap interface
+- **Responsive Design**: Mobile-friendly Bootstrap 5 interface
+- **Modern UI/UX**: Bootstrap Icons integration throughout the application
 
-## 🛠️ Technology Stack
+## Technology Stack
 
-- **Frontend**: HTML5, CSS3, Bootstrap 5.3.3, JavaScript
+- **Frontend**: HTML5, CSS3, Bootstrap 5.3.2, JavaScript
+- **Icons**: Bootstrap Icons 1.11.1
 - **Backend**: PHP 7.4+
 - **Database**: MySQL (MariaDB)
 - **Server**: Apache (XAMPP)
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 Trykasakin/
@@ -31,15 +33,18 @@ Trykasakin/
 │   └── dbConnection.php        # Database connection class
 ├── includes/                    # Reusable PHP components
 ├── assets/
-│   ├── css/                    # Stylesheets
+│   ├── css/                    # Custom stylesheets
 │   │   ├── login.css
-│   │   └── register.css
+│   │   ├── register.css
+│   │   ├── dashboard.css
+│   │   ├── book.css
+│   │   ├── admin.css
+│   │   ├── request.css
+│   │   └── index.css
 │   └── uploads/                # Driver document uploads
 │       ├── or_cr/              # OR/CR documents
 │       ├── licenses/           # Driver licenses
 │       └── pictures/           # Driver photos
-├── docs/
-│   └── documentation.pdf       # PDF documentation
 ├── db files/
 │   └── tric_db.sql            # Database schema
 ├── admin.php                   # Admin dashboard
@@ -50,11 +55,11 @@ Trykasakin/
 ├── register.php                # Registration form
 ├── request.php                 # Booking request handler
 ├── logout.php                  # Session logout
-├── documentation.php           # Web documentation
+├── index.php                   # Landing page
 └── README.md                   # This file
 ```
 
-## ⚙️ Installation
+## Installation
 
 ### Prerequisites
 
@@ -90,15 +95,17 @@ Trykasakin/
    - Ensure `assets/uploads/` folder has write permissions
 
 7. **Access Application**
-   - Main page: `http://localhost/Trykasakin/login.php`
+   - Landing page: `http://localhost/Trykasakin/`
+   - Login: `http://localhost/Trykasakin/login.php`
    - Register: `http://localhost/Trykasakin/register.php`
-   - Documentation: `http://localhost/Trykasakin/documentation.php`
+   - Admin: `http://localhost/Trykasakin/admin.php`
 
-## 👥 User Roles
+## User Roles
 
 ### Passenger
 - Create and manage bookings
 - View booking status
+- Track ride progress in real-time
 - Update profile information
 
 ### Driver
@@ -106,14 +113,16 @@ Trykasakin/
 - Upload required documents (OR/CR, License, Photo)
 - Update booking status to completed
 - Requires admin verification before accepting rides
+- Manage accepted rides
 
 ### Administrator
 - Manage all users (passengers and drivers)
 - Verify driver documents
-- View all bookings
+- View all bookings and statistics
 - Activate/Deactivate user accounts
+- System monitoring and analytics
 
-## 🔄 Workflow
+## Workflow
 
 ### For Passengers:
 1. Register as a Passenger
@@ -130,7 +139,14 @@ Trykasakin/
 5. View and accept booking requests
 6. Complete rides and update status
 
-## 🔒 Security Features
+### For Administrators:
+1. Login with admin credentials
+2. Review driver verification requests
+3. Manage user accounts
+4. Monitor booking statistics
+5. Handle system configurations
+
+## Security Features
 
 - Password hashing using PHP `password_hash()` with bcrypt
 - SQL injection prevention via prepared statements
@@ -138,8 +154,9 @@ Trykasakin/
 - XSS prevention using `htmlspecialchars()`
 - Input validation (server-side and client-side)
 - Secure file upload with type validation
+- CSRF protection ready
 
-## 📊 Database Schema
+## Database Schema
 
 ### Main Tables
 
@@ -149,7 +166,7 @@ Trykasakin/
 - email
 - phone
 - password (hashed)
-- user_type (passenger/driver)
+- user_type (passenger/driver/admin)
 - status (active/inactive)
 - created_at
 
@@ -171,31 +188,46 @@ Trykasakin/
 - driver_id (Foreign Key → drivers)
 - booking_time
 
-## 🚀 Future Enhancements
+## Design Features
 
-- [ ] Real-time GPS tracking integration
-- [ ] Push notifications for booking updates
-- [ ] Payment gateway integration
-- [ ] Rating and review system
-- [ ] Mobile application (Android/iOS)
-- [ ] Multi-language support
-- [ ] Ride history and analytics dashboard
-- [ ] Driver earnings tracking
+### Color Scheme
+- Primary: #37517e (Blue-purple)
+- Secondary: #4a6396
+- Tertiary: #5d75ae
+- Background: #e8edf5 to #d4dde9 gradient
+- Success: #2E7D32
+- Danger: #D32F2F
+- Warning: #F57C00
 
-## 📝 Development Notes
+### Bootstrap Integration
+- Bootstrap 5.3.2 for responsive layout
+- Bootstrap Icons 1.11.1 for modern iconography
+- Custom CSS for brand-specific styling
+- Mobile-first responsive design
+- Smooth animations and transitions
 
-### File Organization (Updated Structure)
-- Configuration files moved to `config/`
-- CSS files organized in `assets/css/`
-- Upload directory: `assets/uploads/`
-- Documentation moved to `docs/`
+## Browser Support
 
-### Key Changes
-- Centralized database connection in `config/dbConnection.php`
-- Updated all file references to use new structure
-- Created web-accessible documentation page
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
+- Mobile browsers (iOS Safari, Chrome Mobile)
 
-## 🐛 Troubleshooting
+## Future Enhancements
+
+- Real-time GPS tracking integration
+- Push notifications for booking updates
+- Payment gateway integration
+- Rating and review system
+- Mobile application (Android/iOS)
+- Multi-language support
+- Ride history and analytics dashboard
+- Driver earnings tracking
+- Advanced search and filtering
+- Export reports functionality
+
+## Troubleshooting
 
 **Database Connection Issues:**
 - Verify MySQL is running in XAMPP
@@ -205,20 +237,46 @@ Trykasakin/
 **File Upload Issues:**
 - Check folder permissions for `assets/uploads/`
 - Verify folder structure exists (or_cr, licenses, pictures)
+- Ensure PHP upload settings allow file uploads
 
 **Session Issues:**
 - Clear browser cookies/cache
 - Check PHP session configuration
+- Verify session directory permissions
 
-## 📄 License
+**Bootstrap Not Loading:**
+- Check internet connection (CDN-based)
+- Verify CDN URLs are accessible
+- Clear browser cache
+
+## Development Notes
+
+### Recent Updates
+- Integrated Bootstrap 5.3.2 across all pages
+- Added Bootstrap Icons for better UX
+- Implemented password visibility toggle
+- Enhanced alert messages with dismissible functionality
+- Improved mobile responsiveness
+- Updated color scheme to blue-purple (#37517e)
+- Removed unnecessary features for cleaner interface
+
+### File Organization
+- Configuration files in `config/`
+- CSS files organized in `assets/css/`
+- Upload directory: `assets/uploads/`
+- Consistent naming conventions
+- Modular code structure
+
+## License
 
 This project is developed for educational and community transportation purposes.
 
-## 👨‍💻 Support
+## Support
 
-For issues or questions, refer to:
-- Web Documentation: `http://localhost/Trykasakin/documentation.php`
-- PDF Documentation: `docs/documentation.pdf`
+For issues or questions:
+- Check the troubleshooting section
+- Review code comments in files
+- Contact system administrator
 
 ---
 

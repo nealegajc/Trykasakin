@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TrycKaSaken - Your Trusted Tricycle Booking Platform</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/index.css">
 </head>
 <body>
@@ -17,10 +22,10 @@
         
         <div class="cta-buttons">
             <a href="login.php" class="btn btn-primary">
-                🚀 Get Started
+                <i class="bi bi-rocket-takeoff"></i> Get Started
             </a>
             <a href="register.php" class="btn btn-secondary">
-                📝 Create Account
+                <i class="bi bi-pencil-square"></i> Create Account
             </a>
         </div>
     </div>
@@ -95,14 +100,17 @@
 <footer class="footer">
     <p>&copy; 2025 TrycKaSaken - Tricycle Booking Platform</p>
     <p>
-        <a href="login.php">Login</a> | 
-        <a href="register.php">Register</a> | 
-        <a href="admin.php">Admin</a>
+        <a href="login.php"><i class="bi bi-box-arrow-in-right"></i> Login</a> | 
+        <a href="register.php"><i class="bi bi-person-plus"></i> Register</a> | 
+        <a href="admin.php"><i class="bi bi-shield-lock"></i> Admin</a>
     </p>
     <p style="margin-top: 20px; opacity: 0.8; font-size: 14px;">
         Safe rides, happy passengers, satisfied drivers. 🛺
     </p>
 </footer>
+
+<!-- Bootstrap 5 JS Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>

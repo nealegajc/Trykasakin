@@ -86,22 +86,33 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RideShare - Register</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/register.css">
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h1>Tryckasaken</h1>
+            <h1><i class="bi bi-bicycle"></i> Tryckasaken</h1>
             <p>Create your account to get started</p>
         </div>
 
         <div class="content">
             <?php if ($error): ?>
-                <div class="alert alert-error"><?php echo $error; ?></div>
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <i class="bi bi-exclamation-triangle-fill"></i> <?php echo $error; ?>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>
             <?php endif; ?>
             
             <?php if ($success): ?>
-                <div class="alert alert-success"><?php echo $success; ?></div>
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <i class="bi bi-check-circle-fill"></i> <?php echo $success; ?>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>
             <?php endif; ?>
 
             <form action="register.php" method="POST" enctype="multipart/form-data">
@@ -173,15 +184,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     </div>
                 </div>
 
-                <button type="submit" class="btn">Create Account</button>
+                <button type="submit" class="btn btn-primary w-100">
+                    <i class="bi bi-person-check"></i> Create Account
+                </button>
             </form>
 
             <div class="footer-text">
-                Already have an account? <a href="login.php">Login here</a>
+                Already have an account? <a href="login.php"><i class="bi bi-box-arrow-in-right"></i> Login here</a>
             </div>
         </div>
     </div>
 
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         function toggleDriverFields() {
             const driverFields = document.getElementById('driverFields');

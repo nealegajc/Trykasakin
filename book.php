@@ -39,12 +39,17 @@ $booking = $latestBooking->fetch_assoc();
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Book a Tricycle | TrycKaSaken</title>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <!-- Custom CSS -->
   <link rel="stylesheet" href="assets/css/book.css">
 </head>
 <body>
 
 <div class="page-header">
-  <h1>🛺 TrycKaSaken</h1>
+  <h1><i class="bi bi-bicycle"></i> TrycKaSaken</h1>
   <p>Your reliable tricycle booking service</p>
 </div>
 
@@ -100,6 +105,9 @@ if (!$booking || strtolower($booking['status']) === 'completed' || strtolower($b
     </div>
   <?php endif; ?>
 </section>
+
+<!-- Bootstrap 5 JS Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
