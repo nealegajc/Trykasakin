@@ -1,6 +1,3 @@
-# Configuration files with sensitive data
-config/dbConnection.php
-
 # Uploaded files
 assets/uploads/*
 !assets/uploads/.gitkeep
