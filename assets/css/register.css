@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', sans-serif;
-    background: linear-gradient(135deg, #FF6B00 0%, #FF8F3D 50%, #FFA659 100%);
+    background: linear-gradient(135deg, #37517e 0%, #4a6396 50%, #5d75ae 100%);
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -51,7 +51,7 @@ body::before {
 }
 
 .header {
-    background: linear-gradient(135deg, #FF6B00 0%, #FF8530 100%);
+    background: linear-gradient(135deg, #37517e 0%, #4a6396 100%);
     padding: 50px 40px 40px;
     text-align: center;
     color: white;
@@ -150,16 +150,16 @@ body::before {
 }
 
 .user-type:hover {
-    border-color: #FF6B00;
+    border-color: #37517e;
     transform: translateY(-4px);
-    box-shadow: 0 8px 20px rgba(255, 107, 0, 0.2);
+    box-shadow: 0 8px 20px rgba(55, 81, 126, 0.2);
     background: white;
 }
 
 .user-type:has(input:checked) {
-    border-color: #FF6B00;
-    background: linear-gradient(135deg, #FFF5F0 0%, #FFE5D6 100%);
-    box-shadow: 0 8px 25px rgba(255, 107, 0, 0.3);
+    border-color: #37517e;
+    background: linear-gradient(135deg, #e8edf5 0%, #d4dde9 100%);
+    box-shadow: 0 8px 25px rgba(55, 81, 126, 0.3);
 }
 
 .user-type-icon {
@@ -207,9 +207,9 @@ input, select {
 
 input:focus, select:focus {
     outline: none;
-    border-color: #FF6B00;
+    border-color: #37517e;
     background: white;
-    box-shadow: 0 0 0 4px rgba(255, 107, 0, 0.1);
+    box-shadow: 0 0 0 4px rgba(55, 81, 126, 0.1);
 }
 
 input::placeholder {
@@ -236,7 +236,7 @@ input::placeholder {
 .file-upload-wrapper input[type="file"]::file-selector-button {
     padding: 10px 18px;
     border: none;
-    background: linear-gradient(135deg, #FF6B00 0%, #FF8530 100%);
+    background: linear-gradient(135deg, #37517e 0%, #4a6396 100%);
     color: white;
     border-radius: 8px;
     cursor: pointer;
@@ -247,8 +247,8 @@ input::placeholder {
 }
 
 .file-upload-wrapper input[type="file"]::file-selector-button:hover {
-    background: linear-gradient(135deg, #FF8530 0%, #FF6B00 100%);
-    box-shadow: 0 4px 12px rgba(255, 107, 0, 0.3);
+    background: linear-gradient(135deg, #4a6396 0%, #37517e 100%);
+    box-shadow: 0 4px 12px rgba(55, 81, 126, 0.3);
 }
 
 .file-info {
@@ -261,7 +261,7 @@ input::placeholder {
 .btn {
     width: 100%;
     padding: 16px;
-    background: linear-gradient(135deg, #FF6B00 0%, #FF8530 100%);
+    background: linear-gradient(135deg, #37517e 0%, #4a6396 100%);
     color: white;
     border: none;
     border-radius: 12px;
@@ -270,14 +270,14 @@ input::placeholder {
     cursor: pointer;
     transition: all 0.3s ease;
     margin-top: 12px;
-    box-shadow: 0 4px 15px rgba(255, 107, 0, 0.3);
+    box-shadow: 0 4px 15px rgba(55, 81, 126, 0.3);
     letter-spacing: 0.5px;
 }
 
 .btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(255, 107, 0, 0.4);
-    background: linear-gradient(135deg, #FF8530 0%, #FF6B00 100%);
+    box-shadow: 0 8px 25px rgba(55, 81, 126, 0.4);
+    background: linear-gradient(135deg, #4a6396 0%, #37517e 100%);
 }
 
 .btn:active {
@@ -293,14 +293,14 @@ input::placeholder {
 }
 
 .footer-text a {
-    color: #FF6B00;
+    color: #37517e;
     text-decoration: none;
     font-weight: 700;
     transition: all 0.2s;
 }
 
 .footer-text a:hover {
-    color: #FF8530;
+    color: #4a6396;
     text-decoration: underline;
 }
 
@@ -317,7 +317,7 @@ input::placeholder {
     transform: translateX(-50%);
     background: white;
     padding: 0 18px;
-    color: #FF6B00;
+    color: #37517e;
     font-weight: 700;
     font-size: 14px;
     letter-spacing: 0.5px;

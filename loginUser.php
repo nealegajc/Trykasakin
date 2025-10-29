@@ -43,29 +43,9 @@
       <p>Monitor your booking status in real-time</p>
       <a href="book.php" class="service-btn">View Status</a>
     </div>
-
-    <div class="service-card">
-      <div class="service-icon">⭐</div>
-      <h3>Rate Drivers</h3>
-      <p>Share your experience and help improve our service</p>
-      <a href="#" class="service-btn">Coming Soon</a>
-    </div>
   </div>
 
-  <div class="stats-section">
-    <div class="stat-card">
-      <div class="stat-number">24/7</div>
-      <div class="stat-label">Available</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-number">99.9%</div>
-      <div class="stat-label">Safety Record</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-number">Fast</div>
-      <div class="stat-label">Response Time</div>
-    </div>
-  </div>
+
 </div>
 
 <script>

@@ -73,56 +73,29 @@ $result = $stmt->get_result();
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Driver Requests | TrycKaSaken</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <style>
-    body { background-color: #f4f6f9; padding-top: 50px; }
-    .container { max-width: 700px; }
-    h2 { color: #37517e; margin-bottom: 20px; }
-    .card { margin-bottom: 15px; border-left: 5px solid #47b2e4; }
-    .btn-accept {
-      background-color: #47b2e4;
-      color: white;
-      border: none;
-      border-radius: 30px;
-      padding: 6px 16px;
-    }
-    .btn-accept:hover { background-color: #31a9db; }
-    .btn-accepted {
-      background-color: #6c757d;
-      color: white;
-      border: none;
-      border-radius: 30px;
-      padding: 6px 16px;
-      cursor: not-allowed;
-      opacity: 0.7;
-      margin-right: 8px;
-    }
-    .btn-complete {
-      background-color: #28a745;
-      color: white;
-      border: none;
-      border-radius: 30px;
-      padding: 6px 16px;
-    }
-    .btn-complete:hover { background-color: #218838; }
-  </style>
+  <link rel="stylesheet" href="assets/css/request.css">
 </head>
 <body>
 
 <div class="container">
-  <h2 class="text-center">Driver Ride Requests</h2>
+  <a href="loginDriver.php" class="back-link">Back to Dashboard</a>
+  
+  <div class="page-header">
+    <h2>Driver Ride Requests</h2>
+    <p>Accept and manage your ride bookings</p>
+  </div>
 
   <?php if (isset($_SESSION['success_message'])): ?>
-    <div class="alert alert-success alert-dismissible fade show" role="alert">
+    <div class="alert alert-success">
       <?= $_SESSION['success_message']; unset($_SESSION['success_message']); ?>
-      <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+      <button type="button" class="btn-close" onclick="this.parentElement.style.display='none'">×</button>
     </div>
   <?php endif; ?>
 
   <?php if (isset($_SESSION['error_message'])): ?>
-    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+    <div class="alert alert-danger">
       <?= $_SESSION['error_message']; unset($_SESSION['error_message']); ?>
-      <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+      <button type="button" class="btn-close" onclick="this.parentElement.style.display='none'">×</button>
     </div>
   <?php endif; ?>
 
@@ -134,40 +107,47 @@ $result = $stmt->get_result();
           <h5 class="card-title"><?= htmlspecialchars($row['name']); ?></h5>
           <p class="card-text"><strong>Pickup:</strong> <?= htmlspecialchars($row['location']); ?></p>
           <p class="card-text"><strong>Destination:</strong> <?= htmlspecialchars($row['destination']); ?></p>
-          <p class="text-muted small">Time: <?= htmlspecialchars($row['booking_time']); ?></p>
-          <p><strong>Status:</strong> 
+          <p class="text-muted">Booked: <?= htmlspecialchars($row['booking_time']); ?></p>
+          <p class="card-text"><strong>Status:</strong> 
              <span class="badge 
                <?= ($status == 'pending') ? 'bg-secondary' : (($status == 'accepted') ? 'bg-info' : 'bg-success'); ?>">
                <?= ucfirst($status); ?>
              </span>
           </p>
 
-          <?php if ($status == 'pending'): ?>
-            <form method="POST" action="" style="display: inline;">
-              <input type="hidden" name="booking_id" value="<?= $row['id']; ?>">
-              <button type="submit" name="accept_ride" class="btn-accept" onclick="return confirm('Accept this ride?')">
-                Accept Ride
-              </button>
-            </form>
-          <?php elseif ($status == 'accepted' && $row['driver_id'] == $driver_id): ?>
-            <button type="button" class="btn-accepted" disabled>Accepted</button>
-            <form method="POST" action="" style="display: inline;">
-              <input type="hidden" name="booking_id" value="<?= $row['id']; ?>">
-              <button type="submit" name="complete_ride" class="btn-complete" onclick="return confirm('Mark this ride as completed?')">
-                Complete Ride
-              </button>
-            </form>
-          <?php endif; ?>
+          <div class="action-buttons">
+            <?php if ($status == 'pending'): ?>
+              <form method="POST" action="">
+                <input type="hidden" name="booking_id" value="<?= $row['id']; ?>">
+                <button type="submit" name="accept_ride" class="btn-accept" onclick="return confirm('Accept this ride?')">
+                  Accept Ride
+                </button>
+              </form>
+            <?php elseif ($status == 'accepted' && $row['driver_id'] == $driver_id): ?>
+              <button type="button" class="btn-accepted" disabled>Accepted</button>
+              <form method="POST" action="">
+                <input type="hidden" name="booking_id" value="<?= $row['id']; ?>">
+                <button type="submit" name="complete_ride" class="btn-complete" onclick="return confirm('Mark this ride as completed?')">
+                  Complete Ride
+                </button>
+              </form>
+            <?php endif; ?>
+          </div>
         </div>
       </div>
     <?php endwhile; ?>
   <?php else: ?>
-    <div class="alert alert-info">No ride requests yet.</div>
+    <div class="empty-state">
+      <div class="empty-state-icon">📭</div>
+      <div class="empty-state-text">
+        No ride requests available at the moment.<br>
+        Check back soon for new booking opportunities!
+      </div>
+    </div>
   <?php endif; ?>
 
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
 
