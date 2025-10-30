@@ -34,19 +34,12 @@
     <p>Start accepting ride requests and earn more today. Your passengers are waiting!</p>
   </div>
 
-  <div class="services-grid">
+  <div class="services-grid" style="justify-content: center;">
     <div class="service-card">
       <div class="service-icon"><i class="bi bi-card-list"></i></div>
       <h3>View Requests</h3>
       <p>Check available booking requests from passengers</p>
       <a href="request.php" class="service-btn">View Requests</a>
-    </div>
-
-    <div class="service-card">
-      <div class="service-icon"><i class="bi bi-check-circle"></i></div>
-      <h3>Accept Rides</h3>
-      <p>Accept booking requests and start earning</p>
-      <a href="request.php" class="service-btn">Go Online</a>
     </div>
   </div>
 </div>

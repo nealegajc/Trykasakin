@@ -1,7 +1,3 @@
-<?php
-// Get count of available drivers
-require_once 'includes/get_available_drivers.php';
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,19 +18,11 @@ require_once 'includes/get_available_drivers.php';
     <div class="hero-content">
         <div class="hero-icon">🛺</div>
         <h1>TrycKaSaken</h1>
-        <p>Your trusted platform for fast, safe, and convenient tricycle rides. Book a ride or become a driver today!</p>
-        
-        <!-- Available Drivers Badge -->
-        <div class="drivers-badge">
-            <div class="badge-content">
-                <div class="badge-number"><?php echo $available_drivers; ?></div>
-                <div class="badge-text">Available Drivers Ready to Serve</div>
-            </div>
-        </div>
+        <p>Your trusted platform for tricycle rides. Book a ride or become a driver today!</p>
         
         <div class="cta-buttons">
             <a href="login.php" class="btn btn-primary">
-                <i class="bi bi-rocket-takeoff"></i> Get Started
+                <i class="bi bi-rocket-takeoff"></i> Login
             </a>
             <a href="register.php" class="btn btn-secondary">
                 <i class="bi bi-pencil-square"></i> Create Account
