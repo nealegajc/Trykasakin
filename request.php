@@ -83,10 +83,10 @@ $result = $stmt->get_result();
 <body>
 
 <div class="container">
-  <a href="loginDriver.php" class="back-link"><i class="bi bi-arrow-left"></i> Back to Dashboard</a>
+  <a href="loginDriver.php" class="back-link">Back to Dashboard</a>
   
   <div class="page-header">
-    <h2><i class="bi bi-card-checklist"></i> Driver Ride Requests</h2>
+    <h2>Driver Ride Requests</h2>
     <p>Accept and manage your ride bookings</p>
   </div>
 

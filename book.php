@@ -49,7 +49,7 @@ $booking = $latestBooking->fetch_assoc();
 <body>
 
 <div class="page-header">
-  <h1><i class="bi bi-bicycle"></i> TrycKaSaken</h1>
+  <h1>🛺 TrycKaSaken</h1>
   <p>Your reliable tricycle booking service</p>
 </div>
 

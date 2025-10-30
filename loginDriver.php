@@ -15,7 +15,7 @@
 
 <nav class="navbar">
   <div class="container">
-    <a class="navbar-brand" href="#"><i class="bi bi-bicycle"></i> TrycKaSaken</a>
+    <a class="navbar-brand" href="#">TrycKaSaken</a>
     <button class="navbar-toggler" onclick="toggleMenu()"><i class="bi bi-list"></i></button>
     <ul class="navbar-nav" id="navMenu">
       <li class="nav-item"><a class="nav-link" href="#home"><i class="bi bi-house"></i> Home</a></li>
@@ -30,23 +30,23 @@
 
 <div class="page-content">
   <div class="welcome-section">
-    <h2><i class="bi bi-hand-wave"></i> Welcome Back, Driver!</h2>
+    <h2>Welcome Back, Driver!</h2>
     <p>Start accepting ride requests and earn more today. Your passengers are waiting!</p>
   </div>
 
   <div class="services-grid">
     <div class="service-card">
-      <div class="service-icon">📋</div>
+      <div class="service-icon"><i class="bi bi-card-list"></i></div>
       <h3>View Requests</h3>
       <p>Check available booking requests from passengers</p>
-      <a href="request.php" class="service-btn"><i class="bi bi-card-list"></i> View Requests</a>
+      <a href="request.php" class="service-btn">View Requests</a>
     </div>
 
     <div class="service-card">
-      <div class="service-icon">✅</div>
+      <div class="service-icon"><i class="bi bi-check-circle"></i></div>
       <h3>Accept Rides</h3>
       <p>Accept booking requests and start earning</p>
-      <a href="request.php" class="service-btn"><i class="bi bi-check-circle"></i> Go Online</a>
+      <a href="request.php" class="service-btn">Go Online</a>
     </div>
   </div>
 </div>
