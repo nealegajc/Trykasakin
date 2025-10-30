@@ -21,12 +21,11 @@ require_once 'includes/get_available_drivers.php';
 <section class="hero">
     <div class="hero-content">
         <div class="hero-icon">🛺</div>
-        <h1>Welcome to <span>TrycKaSaken</span></h1>
+        <h1>TrycKaSaken</h1>
         <p>Your trusted platform for fast, safe, and convenient tricycle rides. Book a ride or become a driver today!</p>
         
         <!-- Available Drivers Badge -->
         <div class="drivers-badge">
-            <div class="badge-icon">👨‍✈️</div>
             <div class="badge-content">
                 <div class="badge-number"><?php echo $available_drivers; ?></div>
                 <div class="badge-text">Available Drivers Ready to Serve</div>
