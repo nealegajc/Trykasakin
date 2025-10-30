@@ -29,35 +29,96 @@ A modern web-based platform for tricycle booking and ride-sharing services, conn
 
 ```
 Trykasakin/
-├── config/                      # Configuration files
-│   └── dbConnection.php        # Database connection class
-├── includes/                    # Reusable PHP components
+├── config/                          # Configuration files
+│   └── dbConnection.php            # Database connection class with PDO/MySQLi wrapper
+├── includes/                        # Reusable PHP components
+│   └── get_available_drivers.php   # Fetches count of available/active drivers
 ├── assets/
-│   ├── css/                    # Custom stylesheets
-│   │   ├── login.css
-│   │   ├── register.css
-│   │   ├── dashboard.css
-│   │   ├── book.css
-│   │   ├── admin.css
-│   │   ├── request.css
-│   │   └── index.css
-│   └── uploads/                # Driver document uploads
-│       ├── or_cr/              # OR/CR documents
-│       ├── licenses/           # Driver licenses
-│       └── pictures/           # Driver photos
+│   ├── css/                        # Custom stylesheets
+│   │   ├── admin.css              # Admin dashboard styling with stats cards
+│   │   ├── book.css               # Booking form and status table styles
+│   │   ├── dashboard.css          # Driver/Passenger dashboard with navbar and cards
+│   │   ├── index.css              # Landing page hero section and features grid
+│   │   ├── login.css              # Login form with gradient background
+│   │   ├── register.css           # Registration form with driver document uploads
+│   │   └── request.css            # Driver request cards and action buttons
+│   └── uploads/                    # Driver document uploads (auto-created)
+│       ├── or_cr/                 # Official Receipt/Certificate of Registration docs
+│       ├── licenses/              # Driver's license images/PDFs
+│       └── pictures/              # Driver profile pictures
 ├── db files/
-│   └── tric_db.sql            # Database schema
-├── admin.php                   # Admin dashboard
-├── book.php                    # Booking interface
-├── login.php                   # User/Driver login
-├── loginDriver.php             # Driver dashboard
-├── loginUser.php               # Passenger dashboard
-├── register.php                # Registration form
-├── request.php                 # Booking request handler
-├── logout.php                  # Session logout
-├── index.php                   # Landing page
-└── README.md                   # This file
+│   └── tric_db.sql                # MySQL database schema with tables and sample data
+├── docs/                           # Documentation files (if any)
+├── admin.php                       # Admin dashboard - manage users, view statistics
+├── book.php                        # Passenger booking form - create/view ride requests
+├── index.php                       # Landing page with features, CTA buttons, driver count
+├── login.php                       # Universal login page with role-based redirection
+├── loginDriver.php                 # Driver dashboard - view requests, go online
+├── loginUser.php                   # Passenger dashboard - book rides, track status
+├── logout.php                      # Session termination and redirect to login
+├── register.php                    # User registration - passenger or driver with docs
+├── request.php                     # Driver request management - accept/complete rides
+└── README.md                       # Project documentation (this file)
 ```
+
+### File Descriptions
+
+#### **Core Pages**
+
+- **`index.php`**: Landing page showcasing platform features, available drivers badge, and call-to-action buttons for registration/login. Displays hero section with emoji icons and feature cards.
+
+- **`login.php`**: Universal authentication page for both passengers and drivers. Validates credentials, checks account status, and redirects users to appropriate dashboards based on their role.
+
+- **`register.php`**: User registration with dual-mode interface - simple form for passengers, extended form for drivers requiring document uploads (OR/CR, license, photo). Includes password confirmation and email validation.
+
+- **`logout.php`**: Handles session destruction and redirects users back to login page. Ensures secure logout process.
+
+#### **User Dashboards**
+
+- **`loginDriver.php`**: Driver dashboard displaying welcome message and service cards. Shows "View Requests" and "Accept Rides" options. Features horizontal navbar with navigation links.
+
+- **`loginUser.php`**: Passenger dashboard with "Book a Ride" and "Track Your Ride" service cards. Clean interface for quick access to booking functionality.
+
+- **`admin.php`**: Administrative control panel showing user statistics (total passengers, drivers, users), displaying tables of all registered users with action buttons (View, Edit, Delete).
+
+#### **Functional Pages**
+
+- **`book.php`**: Booking interface where passengers input their name, pickup location, and destination. Displays latest booking status in a table. Hides form when active booking exists.
+
+- **`request.php`**: Driver-side request management system. Shows pending ride requests and accepted rides. Includes "Accept Ride" and "Complete Ride" action buttons with confirmation dialogs.
+
+#### **Configuration & Includes**
+
+- **`config/dbConnection.php`**: Database connection class handling MySQL connections with error handling, connection management, and query execution methods.
+
+- **`includes/get_available_drivers.php`**: PHP script that queries the database to count active drivers with verified status for display on the landing page.
+
+#### **Stylesheets**
+
+- **`assets/css/admin.css`**: Styles for admin dashboard including stat cards with emoji icons, responsive tables, and Bootstrap card layouts.
+
+- **`assets/css/book.css`**: Booking page styles featuring form sections, status badges (Pending, Accepted, Completed), table styling, and empty state designs.
+
+- **`assets/css/dashboard.css`**: Shared dashboard styles for both driver and passenger dashboards. Includes horizontal navbar, service cards, gradient backgrounds, and responsive breakpoints.
+
+- **`assets/css/index.css`**: Landing page styles with hero section, features grid, gradient backgrounds, call-to-action buttons, and driver availability badge.
+
+- **`assets/css/login.css`**: Login page styles featuring centered form, gradient background, password toggle button, and alert message styling.
+
+- **`assets/css/register.css`**: Registration form styles with user type selector (passenger/driver toggle), file upload sections, conditional driver fields, and form validation styling.
+
+- **`assets/css/request.css`**: Request management page styles including ride request cards, status badges with emoji icons, action buttons (Accept/Complete), and empty state displays.
+
+#### **Database**
+
+- **`db files/tric_db.sql`**: MySQL database schema containing table definitions for users, drivers, and tricycle_bookings. Includes relationships, constraints, and initial configuration.
+
+#### **Assets**
+
+- **`assets/uploads/`**: Directory for storing uploaded driver documents with organized subdirectories:
+  - `or_cr/`: Vehicle registration documents
+  - `licenses/`: Driver's license scans
+  - `pictures/`: Driver profile photos
 
 ## Installation
 
