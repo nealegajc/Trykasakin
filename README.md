@@ -2,31 +2,6 @@
 
 A secure and user-friendly tricycle booking system built with PHP, MySQL, and Bootstrap 5.
 
-## Quick Setup (Windows)
-
-### Prerequisites
-
-- XAMPP for Windows
-- Web Browser (Chrome, Firefox, or Edge)
-- Text Editor (VS Code, Sublime Text, etc.)
-
-### Installation Steps
-
-1. **Install XAMPP**
-   - Download from [apachefriends.org](https://www.apachefriends.org/)
-   - Install to `C:\xampp\`
-   - Run XAMPP Control Panel
-
-2. **Copy Project Files**
-   ```
-   Copy the Trykasakin folder to: C:\xampp\htdocs\Trykasakin
-   ```
-
-3. **Start Services**
-   - Open XAMPP Control Panel
-   - Click "Start" on Apache module
-   - Click "Start" on MySQL module
-
 4. **Access Application**
    - Open browser and visit: `http://localhost/Trykasakin/`
    - Database will be created automatically on first visit
@@ -108,34 +83,6 @@ Default settings work with standard XAMPP installation.
 - Manage users and bookings
 - System oversight
 
-## Technologies Used
-
-- **Backend:** PHP 7.4+
-- **Database:** MySQL/MariaDB
-- **Frontend:** HTML5, CSS3, JavaScript
-- **Framework:** Bootstrap 5.3.2
-- **Icons:** Bootstrap Icons 1.11.1
-
-## Troubleshooting
-
-### MySQL Not Starting in XAMPP
-- Check if port 3306 is already in use
-- Close Skype or other apps using MySQL port
-- Run XAMPP as Administrator
-- Check `C:\xampp\mysql\data\` for error logs
-
-### Apache Not Starting
-- Check if port 80 or 443 is in use
-- Close IIS or other web servers
-- Run XAMPP as Administrator
-- Configure different port in `httpd.conf` if needed
-
-### Database Setup Issues
-- Ensure MySQL is running in XAMPP
-- Clear browser cache and reload homepage
-- Check `C:\xampp\htdocs\Trykasakin\config\dbConnection.php` credentials
-- Verify MySQL service is active
-
 ### File Upload Issues
 - Ensure `public\uploads\` folder exists
 - Check folder permissions (should be writable)
@@ -154,14 +101,6 @@ Additional documentation available in:
 - **Booking Status Tracking**: Track rides from pending to completed
 - **Responsive Design**: Mobile-friendly Bootstrap 5 interface
 - **Modern UI/UX**: Bootstrap Icons integration throughout the application
-
-## Technology Stack
-
-- **Frontend**: HTML5, CSS3, Bootstrap 5.3.2, JavaScript
-- **Icons**: Bootstrap Icons 1.11.1
-- **Backend**: PHP 7.4+
-- **Database**: MySQL (MariaDB)
-- **Server**: Apache (XAMPP)
 
 ## File Descriptions
 
@@ -268,28 +207,3 @@ Additional documentation available in:
 - status (pending/accepted/completed)
 - driver_id (Foreign Key to drivers)
 - booking_time
-
-## Design Features
-
-### Color Scheme
-- Primary: #37517e (Blue-purple)
-- Secondary: #4a6396
-- Background gradient: #e8edf5 to #d4dde9
-- Success: #2E7D32
-- Danger: #D32F2F
-- Warning: #F57C00
-
-### UI Framework
-- Bootstrap 5.3.2 for responsive layout
-- Bootstrap Icons 1.11.1
-- Custom CSS for branding
-- Mobile-first design
-- Smooth transitions
-
-## Browser Support
-
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
-- Mobile browsers supported
