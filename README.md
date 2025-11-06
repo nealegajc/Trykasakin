@@ -4,7 +4,7 @@ A tricycle booking system.
 
 **Access Application**
    - Open browser and visit: `http://localhost/Trykasakin/`
-   - Database will be created automatically on first visit
+   - **Database will be created automatically on first visit**
    - Register as a new user or login with demo accounts
 
 ### Demo Accounts
