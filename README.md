@@ -1,8 +1,8 @@
 # TrycKaSaken - Tricycle Booking Platform
 
-A secure and user-friendly tricycle booking system built with PHP, MySQL, and Bootstrap 5.
+A tricycle booking system.
 
-4. **Access Application**
+**Access Application**
    - Open browser and visit: `http://localhost/Trykasakin/`
    - Database will be created automatically on first visit
    - Register as a new user or login with demo accounts
@@ -12,17 +12,6 @@ A secure and user-friendly tricycle booking system built with PHP, MySQL, and Bo
 After automatic setup, you can login with:
 - **Passenger**: `passenger@demo.com` / `password123`
 - **Driver**: `driver@demo.com` / `password123`
-
-## Features
-
-- **Secure Authentication** - User login with session management
-- **Dual User Types** - Separate portals for Passengers and Drivers
-- **Booking System** - Users can only view their own bookings
-- **Dashboard Analytics** - Real-time booking statistics
-- **Driver Management** - Document verification system
-- **Responsive Design** - Works on all devices
-- **Data Isolation** - Each user sees only their own data
-- **Automatic Setup** - No manual database configuration needed
 
 ## Project Structure
 
@@ -63,8 +52,6 @@ private $username = "root";
 private $password = "";
 ```
 
-Default settings work with standard XAMPP installation.
-
 ## User Roles
 
 ### Passengers
@@ -83,24 +70,10 @@ Default settings work with standard XAMPP installation.
 - Manage users and bookings
 - System oversight
 
-### File Upload Issues
-- Ensure `public\uploads\` folder exists
-- Check folder permissions (should be writable)
-- Verify PHP upload settings in `php.ini`
-
 ## Documentation
 
 Additional documentation available in:
 - `database/SCHEMA_INFO.md` - Schema-as-code pattern explanation
-
-- **User Authentication**: Secure login and registration for passengers and drivers
-- **Driver Verification**: Admin verification system for driver documents
-- **Real-time Bookings**: Instant booking creation and status updates
-- **Admin Dashboard**: Comprehensive user management interface
-- **Document Management**: Secure upload and storage of driver credentials
-- **Booking Status Tracking**: Track rides from pending to completed
-- **Responsive Design**: Mobile-friendly Bootstrap 5 interface
-- **Modern UI/UX**: Bootstrap Icons integration throughout the application
 
 ## File Descriptions
 
@@ -169,17 +142,6 @@ Additional documentation available in:
 3. Manage user accounts
 4. Monitor booking statistics
 5. Handle system configurations
-
-## Advanced Security
-
-- Password hashing using bcrypt algorithm
-- SQL injection prevention via prepared statements
-- Session management and authentication
-- XSS prevention using htmlspecialchars
-- Input validation (server-side and client-side)
-- Secure file upload with type validation
-- User-specific data isolation
-- Foreign key constraints for data integrity
 
 ## Database Schema
 
