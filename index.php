@@ -1,3 +1,45 @@
+<?php
+/**
+ * Auto-setup database if not exists
+ * Silent setup - creates database in background without showing setup page
+ */
+require_once __DIR__ . '/database/schema.php';
+
+$db_host = 'localhost';
+$db_user = 'root';
+$db_pass = '';
+$db_name = 'tric_db';
+
+try {
+    $conn = new mysqli($db_host, $db_user, $db_pass);
+    
+    if ($conn->connect_error) {
+        die("⚠️ MySQL Connection Failed. Please start XAMPP/LAMPP.");
+    }
+    
+    // Check if database exists
+    $db_check = $conn->query("SELECT SCHEMA_NAME FROM INFORMATION_SCHEMA.SCHEMATA WHERE SCHEMA_NAME = '$db_name'");
+    
+    if ($db_check->num_rows == 0) {
+        // Database doesn't exist - create it silently
+        $conn->query("CREATE DATABASE $db_name CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci");
+        $conn->select_db($db_name);
+        DatabaseSchema::createSchema($conn, true);
+    } else {
+        // Database exists, verify schema
+        $conn->select_db($db_name);
+        
+        if (!DatabaseSchema::schemaExists($conn)) {
+            // Tables don't exist - create them silently
+            DatabaseSchema::createSchema($conn, true);
+        }
+    }
+    
+    $conn->close();
+} catch (Exception $e) {
+    die("⚠️ Database setup failed: " . $e->getMessage());
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +51,7 @@
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="assets/css/index.css">
+    <link rel="stylesheet" href="public/css/index.css">
 </head>
 <body>
 
@@ -21,10 +63,10 @@
         <p>Your trusted platform for tricycle rides. Book a ride or become a driver today!</p>
         
         <div class="cta-buttons">
-            <a href="login.php" class="btn btn-primary">
+            <a href="pages/auth/login.php" class="btn btn-primary">
                 <i class="bi bi-rocket-takeoff"></i> Login
             </a>
-            <a href="register.php" class="btn btn-secondary">
+            <a href="pages/auth/register.php" class="btn btn-secondary">
                 <i class="bi bi-pencil-square"></i> Create Account
             </a>
         </div>

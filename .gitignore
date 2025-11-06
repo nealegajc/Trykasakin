@@ -13,3 +13,7 @@ Thumbs.db
 # Temporary files
 *.tmp
 *.temp
+
+# Uploads
+public/uploads/*
+!public/uploads/.gitkeep
