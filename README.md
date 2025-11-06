@@ -108,15 +108,6 @@ Default settings work with standard XAMPP installation.
 - Manage users and bookings
 - System oversight
 
-## Security Features
-
-- SQL Injection Prevention (Prepared Statements)
-- XSS Protection (htmlspecialchars)
-- Session Management
-- User Data Isolation
-- Password Hashing (bcrypt)
-- CSRF Protection Ready
-
 ## Technologies Used
 
 - **Backend:** PHP 7.4+
@@ -154,24 +145,6 @@ Default settings work with standard XAMPP installation.
 
 Additional documentation available in:
 - `database/SCHEMA_INFO.md` - Schema-as-code pattern explanation
-
-## Contributing
-
-1. Fork the repository
-2. Create your feature branch
-3. Commit your changes
-4. Push to the branch
-5. Create a Pull Request
-
-## License
-
-This project is open source and available under the MIT License.
-
-## Developer
-
-**Repository:** Trykasakin  
-**Owner:** nealegajc  
-**Branch:** main ## Additional Features
 
 - **User Authentication**: Secure login and registration for passengers and drivers
 - **Driver Verification**: Admin verification system for driver documents
@@ -320,19 +293,3 @@ This project is open source and available under the MIT License.
 - Safari (latest)
 - Edge (latest)
 - Mobile browsers supported
-
-## Development Notes
-
-### Recent Updates
-- Implemented schema-as-code pattern (no .sql files)
-- Automatic database setup on first visit
-- Added user-specific data isolation
-- Enhanced security with foreign key constraints
-- Reorganized project structure
-- Removed duplicate UI elements
-
-### Architecture
-- Pure PHP schema definition in `database/schema.php`
-- Automatic silent setup in `index.php`
-- Modular page structure
-- Separation of concerns (auth, passenger, driver, admin)
